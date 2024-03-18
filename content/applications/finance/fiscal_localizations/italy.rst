@@ -74,15 +74,15 @@ justify the exemption operated on an invoice line.
    :alt: Tax Exemption Settings
 
 .. seealso::
-   There are many :guilabel:`Tax Exemption Kind (Natura)` and :guilabel:`Law Reference` codes.
-   Make sure you check the latest version available to get the latest information on:
+   There are many :guilabel:`Tax Exemption Kind (Natura)` and :guilabel:`Law Reference` codes. Make
+   sure you check the latest version available to get the latest information on:
 
    - `Italian authorities documentation <https://www.agenziaentrate.gov.it/portale/web/guest/aree-tematiche/fatturazione-elettronica>`_
    - `Official guide on Tax exemption  <https://www.agenziaentrate.gov.it/portale/documents/20143/451259/Guida_compilazione-FE-Esterometro-V_1.9_2024-03-05.pdf/67fe4c2d-1174-e8de-f1ee-cea77b7f5203>`_
 
 .. note::
-   If you need to use a different kind of :guilabel:`Exoneration`, go to :menuselection:`Accounting
-   --> Configuration --> Taxes`, select a similar tax, then click on the cog icon and select
+   If you need to use a different kind of exoneration, go to :menuselection:`Accounting -->
+   Configuration --> Taxes`, select a similar tax, then click on the cog icon and select
    :guilabel:`Duplicate`. In the :guilabel:`Advanced Options` tab, add the :guilabel:`Exoneration`
    and :guilabel:`Law Reference`. To confirm click on :guilabel:`Save`.
 
@@ -100,12 +100,12 @@ supplier to the customer. The customers pay the VAT *themselves* to the :abbr:`A
 Entrate)` instead. There are different types:
 
 - | :guilabel:`Internal Reverse Charge` (for domestic sales)
-  | The VAT responsability is shifted to the buyer for certain categories of products and services
+  | The VAT responsibility is shifted to the buyer for certain categories of products and services
     where the risk of tax evasion is higher.
 - | :guilabel:`External Reverse Charge` (for intra-EU sales)
-  | VAT is due in the country of the delivery or in the country where the service is performed.
-    When the buyer is itself an Italian business, then the EU offers a mechanism that allows the
-    seller to transfer his responsibility to the buyer.
+  | VAT is due in the country of the delivery or in the country where the service is performed. When
+    the buyer is itself an Italian business, then the EU offers a mechanism that allows the seller
+    to transfer his responsibility to the buyer.
 
 Invoices
 --------
@@ -113,8 +113,8 @@ Invoices
 **Reverse-charged** customer invoices show no VAT amount, but the :abbr:`AdE (Agenzia delle
 Entrate)` requires the seller to specify the :guilabel:`Tax Exemption` reason and the :guilabel:`Law
 Reference` that enable the reverse-charge mechanism. Odoo provides a set of special 0% taxes that
-can be assigned to each reverse-charged invoice lines, representing the most
-commonly used configurations.
+can be assigned to each reverse-charged invoice lines, representing the most commonly used
+configurations.
 
 Vendor bills
 ------------
@@ -137,9 +137,9 @@ position, these are automatically activated in the tax list.
 Tax grids
 ---------
 
-The Italian localization has a specific **tax grid** section for **reverse charge** taxes. These tax
-grids are identifiable by the :ref:`VJ <italy/grids>` tag, and can be found by going to
-:menuselection:`Accounting --> Reporting --> Audit Reports: Tax Report`.
+The Italian localization has a specific :ref:`tax grid <tax-returns/tax-grids>` section for
+**reverse charge** taxes. These tax grids are identifiable by the :ref:`VJ <italy/grids>` tag, and
+can be found by going to :menuselection:`Accounting --> Reporting --> Audit Reports: Tax Report`.
 
 .. image:: italy/grids.png
    :alt: Reverse charge tax grid from the VJ section of the Tax Declaration
@@ -149,10 +149,11 @@ grids are identifiable by the :ref:`VJ <italy/grids>` tag, and can be found by g
 E-invoicing
 ===========
 
-The :abbr:`SdI (Sistema di Interscambio)` is the electronic invoicing system used in Italy. It
-enables the sending and receiving of electronic invoices to and from customers. The documents must
-be in an XML :abbr:`EDI (Electronic Data Interchange)` format called **FatturaPA** and formally
-validated by the system before being delivered.
+The :abbr:`SdI (Sistema di Interscambio)` is the :doc:`electronic invoicing
+<../accounting/customer_invoices/electronic_invoicing>` system used in Italy. It enables the sending
+and receiving of electronic invoices to and from customers. The documents must be in an XML
+:abbr:`EDI (Electronic Data Interchange)` format called **FatturaPA** and formally validated by the
+system before being delivered.
 
 To be able to receive invoices and notifications, the :abbr:`SdI (Sistema di Interscambio)` service
 must be notified that the user's files need to be sent to Odoo and processed on their behalf. To do
@@ -235,7 +236,7 @@ by the :abbr:`AdE (Agenzia delle Entrate)`. Once the invoices needed are selecte
    :alt: Send and Print menu
 
 When the pop-up window opens there is a selection of actions that can be taken. :guilabel:`Generate
-XML File` will generate the attachments.
+XML File` generates the attachments.
 
 .. image:: italy/edi-send-and-print.png
    :alt: Send and Print dialog
@@ -278,7 +279,7 @@ Sostitutiva)` if explicitly requested on the Agency's portal.
    and :abbr:`AdE (Agenzia delle Entrate)` supply free and certified storage to meet the
    specifications requested by law.
 
-The :abbr:`SdI (Sistema di Interscambio)` :guilabel:`Destination Code` will attempt to forward the
+The :abbr:`SdI (Sistema di Interscambio)` :guilabel:`Destination Code` attempts to forward the
 invoice to the customer at the provided address, whether it is a `PEC` email address or a
 :abbr:`SdI (Sistema di Interscambio)` :guilabel:`Destination Code` for their ERP's WebServices
 channels. A maximum of 6 attempts are made every 12 hours, so even if unsuccessful, this process can
@@ -288,9 +289,9 @@ Possible Rejection
 ~~~~~~~~~~~~~~~~~~
 
 The :abbr:`SdI (Sistema di Interscambio)` may find inaccuracies in the compilation, possibly even
-formal ones. In this case, the invoice will be in the :guilabel:`SDI Rejected` state. The :abbr:`SdI
-(Sistema di Interscambio)`'s observations will be inserted at the top of the Invoice tab. To resolve
-the issue, it is sufficient to delete the attachments of the invoice, return the invoice to
+formal ones. In this case, the invoice is in the :guilabel:`SDI Rejected` state. The :abbr:`SdI
+(Sistema di Interscambio)`'s observations are inserted at the top of the Invoice tab. To resolve the
+issue, it is sufficient to delete the attachments of the invoice, return the invoice to
 :guilabel:`Draft`, and fix the errors. Once the invoice is ready, it can be resent.
 
 .. note::
@@ -308,7 +309,7 @@ in PDF via email or post. Its status is :guilabel:`Accepted by SDI, Delivered to
 
 If the :abbr:`SdI (Sistema di Interscambio)` cannot contact your customer, they may not be
 registered on the :abbr:`AdE (Agenzia delle Entrate)` portal. In this case, just make sure to send
-the invoice in PDF via email or by mail. The invoice will be in the :guilabel:`Accepted by SDI,
+the invoice in PDF via email or by mail. The invoice is then in the :guilabel:`Accepted by SDI,
 Partner Delivery Failed` state.
 
 Tax Integration
@@ -317,30 +318,32 @@ Tax Integration
 When you receive a vendor bill, either from :abbr:`SdI (Sistema di Interscambio)`, from paper or
 from an imported XML file, the Tax Agency might request that you send some tax information
 integration back to the :abbr:`SdI (Sistema di Interscambio)`. It happens when a transaction that
-was tax exempt becomes taxable for any reason.
+was tax)exempt becomes taxable for any reason.
 
 .. example::
    Here is a non-exhaustive list:
 
-   - :ref:`italy/reverse-charge`; as a buyer you have to pay taxes on what you buy and integrate
-     tax information. :guilabel:`Reverse Charge` taxes.
-   - :ref:`italy/split-payment`; as a :abbr:`PA (Public Administration)` business buyer, you have to
-     pay taxes and integrate tax information. Be sure that you replace the :guilabel:`0% Sale Taxes` on
-     the Vendor Bill you received with the correct :guilabel:`Split Payment` taxes.
-   - :guilabel:`Self Consumption`; when, as a business owner, you use an asset that you bought for
-     business for personal reasons instead, you have to pay those taxes you originally deducted as
-     a business cost for it.
+   - | :ref:`italy/reverse-charge`
+     | As a buyer, you have to pay taxes on what you buy and integrate tax information.
+       :guilabel:`Reverse Charge` taxes.
+   - | :ref:`italy/split-payment`
+     | As a :abbr:`PA (Public Administration)` business buyer, you have to pay taxes and integrate
+       tax information. Be sure that you replace the :guilabel:`0% Sale Taxes` on the vendor bill
+       you received with the correct :guilabel:`Split Payment` taxes.
+   - | :guilabel:`Self Consumption`
+     | When, as a business owner, you use an asset that you bought for business for personal reasons
+       instead, you have to pay those taxes you originally deducted as a business cost for it.
 
-Odoo may detect that your Vendor Bill can be interpreted as a document of a type that needs Tax
-Integration, as detailed in the :ref:`italy/document-types` section.
+Odoo may detect that your vendor bill can be interpreted as a document of a type that needs tax
+integration, as detailed in the :ref:`italy/document-types` section.
 
 .. important::
-   Be sure that you replace the :guilabel:`0% Sale Taxes` on the vendor bill you received with the ones
-   you're supposed to pay to the :abbr:`AdE (Agenzia delle Entrate)`. A button then appears on the
-   top of the single vendor bill form to send them.
+   Be sure that you replace the :guilabel:`0% Sale Taxes` on the vendor bill you received with the
+   ones you're supposed to pay to the :abbr:`AdE (Agenzia delle Entrate)`. A button then appears on
+   the top of the single vendor bill form to send them.
 
    When clicking on the :guilabel:`Send Tax Integration` button, an XML file of the appropriate
-   :guilabel:`Document Type` will be generated, attached to the bill and sent as for invoices.
+   :guilabel:`Document Type` is generated, attached to the bill, and sent as for invoices.
 
    .. image:: italy/edi-tax-integration-button.png
       :alt: EDI Send Tax Integration button
@@ -352,6 +355,7 @@ Document Types
 
 The :abbr:`SdI (Sistema di Interscambio)` requires businesses to send customer invoices and other
 documents through the :abbr:`EDI (Electronic Data Interchange)`.
+
 The following :guilabel:`Document Type` codes all technically identify different business use cases.
 
 TD01 - Invoices
@@ -359,7 +363,7 @@ TD01 - Invoices
 
 This represents the standard **domestic** scenario for all invoices exchanged through the :abbr:`SdI
 (Sistema di Interscambio)`. Any invoice that doesn't fall into one of the specific special cases
-will be categorized as a Regular Invoice, identified by the :guilabel:`Document Type` `TD01`.
+is categorized as a regular invoice, identified by the :guilabel:`Document Type` `TD01`.
 
 TD02 - Down payments
 ~~~~~~~~~~~~~~~~~~~~
@@ -384,8 +388,8 @@ TD07, TD08, TD09 - Simplified Invoicing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Simplified invoices (`TD07`), credit notes (`TD08`), and debit notes (`TD09`) can be used to certify
-domestic transactions under 400 EUR (VAT included). Its status is the same as a regular invoice, but
-with fewer information requirements.
+domestic transactions under 400 EUR (VAT included). Its status is the same as that of a regular
+invoice, but with fewer information requirements.
 
 For a simplified invoice to be established, it must include:
 
@@ -402,12 +406,12 @@ In the :abbr:`EDI (Electronic Data Interchange)`, Odoo exports invoices as simpl
 #. Your company's **required fields** (:guilabel:`VAT Number` or :guilabel:`Codice Fiscale`,
    :guilabel:`Fiscal Regime`, and full **address**) are provided;
 #. The partner's address is not fully specified (i.e., it misses the City or the ZipCode);
-#. The total amount VAT included is **less** than **400 EUR**.
+#. The total amount of VAT included is **less** than **400 EUR**.
 
 .. note::
    The 400 EUR threshold was defined in `the decree of the 10th of May 2019 in the Gazzetta
-   Ufficiale <https://www.gazzettaufficiale.it/eli/id/2019/05/24/19A03271/sg>`_. We advise you
-   to check the current official value in case it changes.
+   Ufficiale <https://www.gazzettaufficiale.it/eli/id/2019/05/24/19A03271/sg>`_. We advise you to
+   check the current official value.
 
 TD16 - Internal Reverse Charge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -422,9 +426,9 @@ Internal reverse charge transactions (see :ref:`italy/tax-exemption` and
 TD17 - Buying services from abroad
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When buying **services** from **EU** and **non-EU** countries, the foreign *seller*
-invoices a service with a **VAT-excluded** price, as it is not taxable in Italy.
-The VAT is paid by the *buyer* in Italy.
+When buying **services** from **EU** and **non-EU** countries, the foreign *seller* invoices a
+service with a **VAT-excluded** price, as it is not taxable in Italy. The VAT is paid by the *buyer*
+in Italy.
 
 - Within the EU: the *buyer* integrates the invoice received with the **VAT information** due in
   Italy (i.e., **vendor bill tax integration**);
@@ -441,8 +445,8 @@ Odoo exports a transaction as `TD17` if the following conditions are met:
 TD18 - Buying goods from EU
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Invoices issued within the EU follow a **standard format**, therefore only an integration of
-the existing invoice is required.
+Invoices issued within the EU follow a **standard format**, therefore only an integration of the
+existing invoice is required.
 
 Odoo exports a transaction as `TD18` if the following conditions are met:
 
@@ -455,8 +459,8 @@ Odoo exports a transaction as `TD18` if the following conditions are met:
 TD19 - Buying goods from VAT deposit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Buying **goods** from a **foreign** vendor, but the **goods** are already in **Italy** in a
-**VAT deposit**.
+Buying **goods** from a **foreign** vendor, but the **goods** are already in **Italy** in a **VAT
+deposit**.
 
 - From the EU: the *buyer* integrates the invoice received with the **VAT information** due in
   Italy (i.e., **vendor bill tax integration**);
@@ -476,25 +480,24 @@ The **deferred invoice** is an invoice that is **issued at a later time** than t
 the provision of services. A **deferred invoice** has to be issued at the latest within the **15th
 day** of the month following the delivery covered by the document.
 
-It usually is a **summary invoice** containing a list of multiple sales of goods or services
-carried out in the month. The business is allowed to **group** the sales into **one invoice**,
-generally issued at the **end of the month** for accounting purposes. Deferred invoices are default
-for **wholesalers** having recurrent clients.
+It usually is a **summary invoice** containing a list of multiple sales of goods or services carried
+out in the month. The business is allowed to **group** the sales into **one invoice**, generally
+issued at the **end of the month** for accounting purposes. Deferred invoices are default for
+**wholesalers** having recurrent clients.
 
 If the goods are transported by a **carrier**, every delivery has an associated **Documento di
 Transporto (DDT)**, or **Transport Document**. The deferred invoice **must** indicate the details of
 all the **DDTs** information for better tracing.
 
 .. note::
-    E-invoicing of deferred invoices requires the `l10n_it_stock_ddt`
-    :ref:`module <italy/modules>`. In this case, a dedicated :guilabel:`Document Type` `TD24`
-    is used in the e-invoice.
+   E-invoicing of deferred invoices requires the `l10n_it_stock_ddt` :ref:`module <italy/modules>`.
+   In this case, a dedicated :guilabel:`Document Type` `TD24` is used in the e-invoice.
 
 Odoo exports transactions as `TD24` if the following conditions are met:
 
 #. It is an invoice;
-#. It is associated with deliveries whose **DDTs** have a **different** date than the issue date
-   of the invoice.
+#. It is associated with deliveries whose **DDTs** have a **different** date than the issue date of
+   the invoice.
 
 TD28 - San Marino
 ~~~~~~~~~~~~~~~~~
@@ -546,23 +549,24 @@ CIG, CUP, DatiOrdineAcquisto
 ----------------------------
 
 To ensure the effective traceability of payments by public administrations, electronic invoices
-issued to the public administrations must contain:
+issued to public administrations must contain:
 
 - The :abbr:`CIG (Codice Identificativo Gara)`, except in cases of exclusion from traceability
   obligations provided by law n. 136 of August 13, 2010;
 - The :abbr:`CUP (Codice Unico di Progetto)`, in case of invoices related to public works.
 
-If the XML file requires it, the :abbr:`AdE (Agenzia Delle Entrate)` can *only* proceed payments
-of electronic invoices when the XML file contains a :abbr:`CIG (Codice Identificativo Gara)` and
+If the XML file requires it, the :abbr:`AdE (Agenzia Delle Entrate)` can *only* proceed payments of
+electronic invoices when the XML file contains a :abbr:`CIG (Codice Identificativo Gara)` and
 :abbr:`CUP (Codice Unico di Progetto)`.
 
 .. note::
-   - The :abbr:`CUP (Codice Unico di Progetto)` and the :abbr:`CIG (Codice Identificativo Gara)`
-     must be included in one of the `DatiOrdineAcquisto`, `DatiContratto`, `DatiConvenzione`,
-     `DateRicezione`, or `DatiFattureCollegate` XML tags.
-     These correspond to the elements named :guilabel:`CodiceCUP` and :guilabel:`CodiceCIG` of the
-     electronic invoice XML file, whose table can be found on the government `website
-     <http://www.fatturapa.gov.it/>`_.
+   The :abbr:`CUP (Codice Unico di Progetto)` and the :abbr:`CIG (Codice Identificativo Gara)` must
+   be included in one of the `DatiOrdineAcquisto`, `DatiContratto`, `DatiConvenzione`,
+   `DateRicezione`, or `DatiFattureCollegate` XML tags.
+
+   These correspond to the elements named :guilabel:`CodiceCUP` and :guilabel:`CodiceCIG` of the
+   electronic invoice XML file, whose table can be found on the government `website
+   <http://www.fatturapa.gov.it/>`_.
 
 .. _italy/split-payment:
 
@@ -572,9 +576,9 @@ Split Payment
 The :guilabel:`Split Payment` mechanism behaves much like :ref:`italy/reverse-charge`.
 
 .. example::
-   When an Italian company bills a :abbr:`PA (Public Administration)` business, for example they're
-   selling cleaning services for a public building, the :abbr:`PA (Public Administration)` business
-   will self-report the VAT to the Tax Agency themselves, and the vendor just has to select the
+   When an Italian company bills a :abbr:`PA (Public Administration)` business - for example,
+   cleaning services for a public building - the :abbr:`PA (Public Administration)` business
+   self-reports the VAT to the Tax Agency themselves, and the vendor just has to select the
    appropriate tax with the right :guilabel:`Tax Exemption` for their invoice lines.
 
 The specific :guilabel:`Scissione dei Pagamenti` fiscal position is available to deal with partners
@@ -588,7 +592,7 @@ Process
 Digital qualified signature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For invoices and bills intended to the :abbr:`PA (Public Administration)`, a **Digital Qualified
+For invoices and bills intended for the :abbr:`PA (Public Administration)`, a **Digital Qualified
 Signature** is required for all files sent through the :abbr:`SdI (Sistema di Interscambio)`. The
 XML file must be certified using a certificate that is either:
 
@@ -609,19 +613,19 @@ Acceptance or Refusal
 .. warning::
    As Odoo does not handle sending signed invoices to :abbr:`PA (Public Administration)` businesses,
    these states cannot be directly triggered by Odoo. When you upload the invoice on the :abbr:`AdE
-   (Agenzia Delle Entrate)` portal,Odoo will receive notifications about it, putting the the correct
+   (Agenzia Delle Entrate)` portal, Odoo receives notifications about it, putting the correct
    :guilabel:`SdI State` on the invoice.
 
 After receiving the invoice through the :abbr:`SdI (Sistema di Interscambio)`, the :abbr:`PA (Public
-Administration)` business has 15 days to accept the invoice. If it does, then the process
-ends here. If the :abbr:`PA (Public Administration)` business refuses the invoice, it is still
-considered valid once it was accepted by the :abbr:`SdI (Sistema di Interscambio)` so you'll have to
-do a credit note to compensate and sent that also to the :abbr:`SdI (Sistema di Interscambio)`.
+Administration)` business has 15 days to accept the invoice. If it does, then the process ends here.
+If the :abbr:`PA (Public Administration)` business refuses the invoice, it is still considered valid
+once it is accepted by the :abbr:`SdI (Sistema di Interscambio)`. You then have to issue a credit
+note to compensate and send it to the :abbr:`SdI (Sistema di Interscambio)`.
 
 Expired Terms
 ~~~~~~~~~~~~~
 
-If the :abbr:`PA (Public Administration)` business doesn't reply within 15 days, you need to
-contect the :abbr:`PA (Public Administration)` business directly, sending them both the
-invoice and the received deadline notification by email. You can get an arrangement with
-them, and manually set the correct :guilabel:`SdI State` on your invoice.
+If the :abbr:`PA (Public Administration)` business doesn't reply within 15 days, you need to contact
+the :abbr:`PA (Public Administration)` business directly, sending them both the invoice and the
+received deadline notification by email. You can make an arrangement with them and manually set the
+correct :guilabel:`SdI State` on your invoice.
