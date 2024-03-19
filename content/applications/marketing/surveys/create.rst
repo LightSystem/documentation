@@ -1,56 +1,87 @@
-=================
-Survey essentials
-=================
+Create surveys
+==============
 
-Companies often use surveys to collect valuable information from their customers and employees,
-which in turn, allows them to make more informed business decisions.
+To create a survey in the Odoo *Surveys* application, navigate to :menuselection:`Surveys app -->
+New` to reveal a blank survey form.
 
-In Odoo, surveys are used to collect customer feedback, evaluate the success of a recent event,
-measure the satisfaction of customers (or employees), and gain more insight into shifting market
-sentiments.
-
-Getting started
-===============
-
-To begin, open the :guilabel:`Surveys` application and click :guilabel:`Create`. Odoo then
-redirects the page to a blank survey template form.
-
-On the survey form, add a :guilabel:`Survey Title` and then add a cover image to the survey by
-hovering over the photo icon and clicking on the :guilabel:`Edit (pencil)` icon. When the file
-explorer window opens, choose an image from the local files.
-
-Below the :guilabel:`Survey Title` are various tabs in which the survey questions and format can be
-created and customized. These tabs are labeled as follows:
-
-- :guilabel:`Questions`: the list of questions to be asked in the survey
-- :guilabel:`Description`: contextual information to aid in understanding the survey
-- :guilabel:`Options`: choices for survey respondents to answer the questions
-
-.. image:: create/questions-description-options.png
+[image of blank survey form]
+.. image:: create/TBD.png
    :align: center
-   :alt: Various tabs that can be found on the survey template page.
+   :alt: 
+
+.. note::
+   The :guilabel:`New` button is **not** present on the *Surveys* dashboard if in the *Activities*
+   view.
+
+At the top of the survey form are four radio buttons, each representing a survey style. The radio
+button options are:
+
+- :guilabel:`Survey`
+- :guilabel:`Live Session`
+- :guilabel:`Assessment`
+- :guilabel:`Custom` (selected by default)
+
+These options are here to streamline the survey-making process, by providing users with automated
+settings and options that are ideally specific to those types of surveys. Each of those survey type
+options comes equipped with its own specific selection of options.
+
+The :guilabel:`Custom` option, selected by default, offers all the options from every potential
+survey type. Those options are located in the :guilabel:`Options` tab of the survey form.
+
+Beneath those radio survey type options is a blank field in which a name for the survey **must** be
+entered.
+
+Below the survey name field, is the :guilabel:`Responsible` field. Designate any user from this
+drop-down menu to be in charge of the survey. The user who initially created the survey is chosen as
+the default :guilabel:`Repsonsible`.
+
+To the right of those fields, and above the tabs, is the option to add a background image,
+represented by a :guilabel:`(camera and plus sign)` icon. When clicked, the option to upload an
+image becomes available. This image would be used as the background image for the entire survey.
+This is **not** a required option.
+
+Below those fields and options are four tabs: :guilabel:`Questions`, :guilabel:`Options`,
+:guilabel:`Description`, and :guilabel:`End Message`.
 
 Questions tab
 =============
 
-Add questions and sections to the survey in the :guilabel:`Questions` tab. A section divides the
-survey into parts in order to visually group similar questions together. To make a section, click
-:guilabel:`Add a section` and type in a section name. Then, add questions or drag and drop
-questions into the divided sections.
+Add questions and sections to the survey in the :guilabel:`Questions` tab. 
 
-Clicking :guilabel:`Add a question` opens the :guilabel:`Create Sections and Questions` pop-up to
-create and customize the survey question.
+Create sections
+---------------
 
-.. image:: create/survey-question-pop-up.png
-   :align: center
-   :alt: The survey question pop-up window.
+A *section* divides the survey into organized parts, in order to visually group similar questions
+together. To make a section, click :guilabel:`Add a section` at the bottom of the
+:guilabel:`Questions` tab, proceed to type in a desired name for the section, then either press
+'Enter' or click away. 
+
+Then, drag-and-drop desired questions beneath that section, or drag-and-drop the section title on
+top of (before) the desired question(s), in order to populate the section with specific questions
+that fit the theme of the section. Sections create neatly divided, organized sections in a survey.
 
 Create questions
 ----------------
 
-In the :guilabel:`Create Sections and Questions` pop-up, type the question in the
-:guilabel:`Question` field. Then, choose the :guilabel:`Question Type`. A preview of how the
-question type looks is shown in the preview window.
+To create questions for the survey, click :guilabel:`Add a question` in the :guilabel:`Questions`
+tab.
+
+Clicking :guilabel:`Add a question` opens the :guilabel:`Create Sections and Questions` pop-up
+window, in which a survey question can be created.
+
+Create sections and questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[image of the 'Create sections and questions pop-up']
+.. image:: create/TBD.png
+   :align: center
+   :alt: 
+
+In the :guilabel:`Create Sections and Questions` pop-up window, start by typing the question in the
+:guilabel:`Question` field. 
+
+Then, choose the desired :guilabel:`Question Type`. A preview of the question type is shown in the
+preview window to the right of the :guilabel:`Question Type` field.
 
 Choose from the following :guilabel:`Question Types`:
 
@@ -65,18 +96,57 @@ Choose from the following :guilabel:`Question Types`:
 
 .. note::
    Different features appear in the :guilabel:`Answers` and :guilabel:`Options` tabs, depending on
-   the :guilabel:`Question Type` chosen. However, the :guilabel:`Description` tab always remains
-   the same, regardless of what question is chosen.
-
-Create sections and questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   the chosen :guilabel:`Question Type`.
+   
+   However, the :guilabel:`Description` tab **always** remains the same, regardless of what question
+   type is chosen.
 
 Once a :guilabel:`Question Type` has been selected, there are three possible tabs where information
-can be customized for the question. These include the :guilabel:`Answers` (if applicable),
-:guilabel:`Description`, and :guilabel:`Options` tabs.
+can be customized for the question. These include the :guilabel:`Answers` tab (if applicable),
+the :guilabel:`Description` tab, and the :guilabel:`Options` tab.
 
-Each tab offers a variety of different features depending on what :guilabel:`Question Type` was
+Each tab offers a variety of different features, depending on what :guilabel:`Question Type` was
 chosen.
+
+Answers tab
+***********
+
+The :guilabel:`Answers` tab **only** appears if the selected :guilabel:`Question Type` provides
+answer options to the participant.
+
+But, if a custom response is required to answer the selected :guilabel:`Question Type`, like a
+:guilabel:`Multiple Lines Text Box`, for example. Or, if the answer to the :guilabel:`Question Type`
+is a number, date, or datetime, the :guilabel:`Answers` tab disappears completely.
+
+However, if the :guilabel:`Single Line Text Box` is selected as the :guilabel:`Question Type`, the
+:guilabel:`Answers` tab remains, although it only provides two checkbox options: :guilabel:`Input
+must be an email` and :guilabel:`Save as user nickname`.
+
+For all other applicable :guilabel:`Question Type` options that provide answer options to the
+participant, the :guilabel:`Answers` tab appears the same, with a :guilabel:`Choices` section, from
+which users can add answer options by clicking :guilabel:`Add a line`, and typing in the various
+answer options for that question.
+
+An exception that is if the :guilabel:`Matrix` option is selected as the :guilabel:`Question Type`.
+If that's chosen, the :guilabel:`Answers` tab remains, but below the typical :guilabel:`Choices`
+section, there is a :guilabel:`Rows` section. That's because the :guilabel:`Matrix` option provides
+an answer table for participants to fill out.
+
+Description tab
+***************
+
+In the :guilabel:`Description` tab of the :guilabel:`Create Sections and Questions` pop-up window is
+used to provide any kind of guidelines, instructions, or any other type of supplemental material
+deemed necessary to help participants answer/understand the question.
+
+Entering a description is **not** required.
+
+Options tab
+***********
+[[[[[[[PICK UP FROM HERE]]]]]]]
+
+
+
 
 For example, in the :guilabel:`Options` tab, the following options may appear:
 
