@@ -6,30 +6,42 @@ To properly maintain a fleet of vehicles, regular maintenance as well as periodi
 needed. Scheduling repairs and managing services for an entire fleet is necessary to ensure all
 vehicles are in good working order when they are needed.
 
+.. _services/service-form:
+
 Create a service record
 =======================
 
 To log a service, go to the main services dashboard by navigating to :menuselection:`Fleet app -->
-Fleet --> Services`. Click :guilabel:`Create` and a service form appears. Fill in the information on
-the form and click :guilabel:`Save`. The only two fields that are required to be populated are
+Fleet --> Services`. Click the :guilabel:`New` button in the top-left corner, and a new service form
+loads.
+
+Fill out the information on the form. The only two fields that are required to be populated are
 :guilabel:`Service Type` and :guilabel:`Vehicle`.
 
-The fields are:
+The service form automatically saves as data is entered. However, the form can be saved manually at
+any time by clicking the :guilabel:`Save manually` option, represented by a :guilabel:`cloud with an
+upwards arrow inside` icon.
+
+The fields on the form are:
 
 - :guilabel:`Description`: enter in a short description of the service.
-- :guilabel:`Service Type`: select the type of service performed from the drop-down menu, or type in
-  a new type of service and click either :guilabel:`Create` or :guilabel:`Create & Edit...`. This
-  list is not pre-configured in Odoo. When creating a fleet and logging a service, the types of
-  service need to be created.
-- :guilabel:`Date`: using the calendar module, select the date the service was provided or is
-  scheduled to be performed. Navigate to the desired month using the left and right arrow icons,
+- :guilabel:`Service Type`: select the type of service performed using the drop-down menu, or enter
+  a new type of service and click either :guilabel:`Create "service type"` or :guilabel:`Create &
+  Edit...` to :ref:`add the service type and configure it <services/new-type>`.
+
+  .. note::
+     :guilabel:`Service Types` are **not** pre-configured in Odoo. When logging a service for the
+     first time, the *type* of service need to :ref:`first be created <services/new-type>` before
+     it can be selected.
+
+- :guilabel:`Date`: using the calendar popover, select the date the service was provided or is
+  scheduled to be performed. Navigate to the desired month using the :guilabel:`< > (arrow)` icons,
   then click on the date to select it.
 - :guilabel:`Cost`: enter the cost of the service.
-- :guilabel:`Vendor`: select the vendor who performed the service from the drop-down menu. If the
+- :guilabel:`Vendor`: select the vendor who performed the service using the drop-down menu. If the
   vendor has not already been entered in the system, type in the vendor name and click either
-  :guilabel:`Create` to add them, or :guilabel:`Create & Edit...` to create the vendor and edit the
-  vendor form. The vendor form allows for other details aside form the name to be entered, such as
-  contact information.
+  :guilabel:`Create` to add them, or  :guilabel:`Create and edit...` to :ref:`add and configure the
+  vendor <services/new-vendor>`.
 - :guilabel:`Vehicle`: select the vehicle that was serviced from the drop-down menu. When the
   vehicle is selected, the :guilabel:`Driver` field is populated, and the unit of measure for the
   :guilabel:`Mileage` field appears.
@@ -41,7 +53,7 @@ The fields are:
   :guilabel:`Vehicle` is selected, the units of measure is populated. This comes from the vehicle
   form. To change from kilometers to miles, or vice versa, click the :guilabel:`External Link`
   button next to the vehicle selected in the :guilabel:`Vehicle` field. Change the unit of measure,
-  then click :guilabel:`Save`. the unit of measure will be updated in the :guilabel:`Odometer Value`
+  then click :guilabel:`Save`. The unit of measure is updated in the :guilabel:`Odometer Value`
   field.
 - :guilabel:`Notes`: enter any notes for the repair in the notes tab at the bottom of the service
   form.
@@ -49,6 +61,47 @@ The fields are:
 .. image:: service/new-service.png
    :align: center
    :alt: Enter the information for a new service. The required fields are Service Type and Vehicle.
+
+.. _services/new-type:
+
+Create service type
+-------------------
+
+Service types must be created from a service form, there is no other way to access the list of
+service types.
+
+On the :ref:`service form <services/service-form>`, type in the name of the new :guilabel:`Service
+Type` in the field. Then, click :guilabel:`Create and edit...` and a :guilabel:`Create Service Type`
+form appears.
+
+The service type entered on the service form populates the :guilabel:`Name` field by default. This
+field can be modified if desired.
+
+Using the drop-down menu, select the :guilabel:`Category` this new service type falls under, if any.
+The two default options to chose form are :guilabel:`Contract` or :guilabel:`Service`. Additional
+categories cannot be created.
+
+If the service applies to **only** contracts or services, select the corresponding
+:guilabel:`Category`. If the service applies to **both** contracts *and* services, leave this field
+blank.
+
+When done, click :guilabel:`Save & Close`.
+
+.. _services/new-vendor:
+
+Create vendor
+-------------
+
+When a service is done for the firts time, typically the vendor is not already in the database. It
+is best practice to add the full details for a vendor in the databse, so any necessary infomration
+is easily retrieved.
+
+On the :ref:`service form <services/service-form>`, type in the name of the new :guilabel:`Vendor`
+in the field. Then, click :guilabel:`Create and edit...` and a :guilabel:`Create Vendor` form
+appears.
+
+The vendor name entered on the service form populates the :guilabel:`Name` field by default. This
+field can be modified if desired.
 
 List of services
 ================
